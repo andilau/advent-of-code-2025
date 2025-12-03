@@ -8,7 +8,7 @@ This project contains solutions to the [Advent of Code 2021](https://adventofcod
 ## Solutions
 
 - Day 1: [Secret Entrance](https://adventofcode.com/2025/day/1) -- [Day1.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day1.kt)
-- Day 1: [Gift Shop](https://adventofcode.com/2025/day/2) -- [Day1.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day2.kt)
+- Day 1: [Gift Shop](https://adventofcode.com/2025/day/2) -- [Day2.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day2.kt)
 
 ### Features
 
