@@ -7,7 +7,18 @@ import org.junit.jupiter.api.Test
 
 @DisplayName("Day 1")
 class Day1Test {
-    val ints = listOf(1, 2, 3)
+    val instructions = """
+        L68
+        L30
+        R48
+        L5
+        R60
+        L55
+        L1
+        L99
+        R14
+        L82
+    """.trimIndent().lines()
 
     @Nested
     @DisplayName("Part 1")
@@ -18,8 +29,8 @@ class Day1Test {
         }
 
         @Test
-        fun shouldReturnSumOfSimpleList() {
-            assertThat(Day1(ints).partOne()).isEqualTo(6)
+        fun shouldPointAtZeroNTimes() {
+            assertThat(Day1(instructions).partOne()).isEqualTo(3)
         }
     }
 
@@ -28,12 +39,12 @@ class Day1Test {
     inner class Part2 {
         @Test
         fun shouldReturnProductOfEmptyList() {
-            assertThat(Day1(emptyList()).partTwo()).isEqualTo(1)
+            assertThat(Day1(emptyList()).partTwo()).isEqualTo(0)
         }
 
         @Test
         fun shouldReturnProductOfSimpleList() {
-            assertThat(Day1(ints).partTwo()).isEqualTo(6)
+            assertThat(Day1(instructions).partTwo()).isEqualTo(6)
         }
     }
 }
