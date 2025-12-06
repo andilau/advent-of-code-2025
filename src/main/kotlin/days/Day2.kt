@@ -16,12 +16,10 @@ class Day2(private val input: String) : Puzzle {
 
     override fun partOne(): Long = ranges.map { invalidIds(it) }.flatten().sum()
 
-    override fun partTwo(): Long = ranges.map { invalidIds2(it) }.flatten()
-        .also { println(it) }
-        .sum()
+    override fun partTwo(): Long = ranges.map { invalidIds2(it) }.flatten().sum()
 
     private fun invalidIds(it: LongRange): List<Long> {
-        return (it.start..it.last)
+        return (it.first..it.last)
             .filter { id ->
                 val id1 = id.toString()
                 id1.substring(0, id1.length / 2) == id1.substring(id1.length / 2)
