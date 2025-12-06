@@ -17,7 +17,17 @@ class Day4(val input: List<String>) : Puzzle {
         }
     }
 
-    override fun partTwo(): Long = 0
+    override fun partTwo(): Int {
+        val nextFunction: (Set<Point>) -> Set<Point> = { rolls ->
+            rolls.filter { roll -> roll.eightNeighbors().count { rolls.contains(it) } >= 4 }.toSet()
+        }
+        val finalRound: Set<Point> = generateSequence(paperRolls, nextFunction)
+            .windowed(2)
+            .takeWhile { (a, b) -> a.size != b.size }
+            .map { it[1] }
+            .last()
+        return paperRolls.size - finalRound.size
+    }
 
     data class Point(val x: Int, val y: Int) {
 

@@ -24,7 +24,7 @@ class Day4Test {
     @DisplayName("Part 1")
     inner class Part1 {
         @Test
-        fun `There are 13 rolls of paper that can be accessed by a forklift`() {
+        fun `13 rolls of paper that can be accessed by a forklift`() {
             assertThat(Day4(map).partOne()).isEqualTo(13)
         }
     }
@@ -34,8 +34,8 @@ class Day4Test {
     inner class Part2 {
 
         @Test
-        fun `How many ingredient IDs are considered to be fresh according to the fresh ingredient ID ranges`() {
-            assertThat(Day4(map).partTwo()).isEqualTo(14)
+        fun `43 rolls of paper in total can be removed by the Elves and their forklifts`() {
+            assertThat(Day4(map).partTwo()).isEqualTo(43)
         }
     }
 }
