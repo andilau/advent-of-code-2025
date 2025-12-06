@@ -8,9 +8,9 @@ package days
 class Day5(input: List<String>) : Puzzle {
 
     val ranges: List<LongRange> =
-        input.takeWhile { !it.isEmpty() }.map { it.split("-").map { it.toLong() }.let { LongRange(it[0], it[1]) } }
+        input.takeWhile { it.isNotEmpty() }.map { it.split("-").map { it.toLong() }.let { LongRange(it[0], it[1]) } }
 
-    val ingredientIds: List<Long> = input.dropWhile { !it.isEmpty() }
+    val ingredientIds: List<Long> = input.dropWhile { it.isNotEmpty() }
         .drop(1)
         .map { it.toLong() }
 
