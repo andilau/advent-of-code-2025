@@ -9,6 +9,7 @@ This project contains solutions to the [Advent of Code 2025](https://adventofcod
 
 - Day 1: [Secret Entrance](https://adventofcode.com/2025/day/1) -- [Day1.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day1.kt)
 - Day 2: [Gift Shop](https://adventofcode.com/2025/day/2) -- [Day2.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day2.kt)
+- Day 4: [Printing Department](https://adventofcode.com/2025/day/4) -- [Day4.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day4.kt)
 - Day 5: [Cafeteria](https://adventofcode.com/2025/day/5) -- [Day5.kt](https://github.com/andilau/advent-of-code-2025/blob/main/src/main/kotlin/days/Day5.kt)
 
 ### Features
