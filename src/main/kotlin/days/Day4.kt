@@ -11,23 +11,20 @@ class Day4(val input: List<String>) : Puzzle {
         line.mapIndexedNotNull { x, c -> if (c == '@') Point(x, y) else null }
     }.toSet()
 
-    override fun partOne(): Int {
-        return paperRolls.count { roll ->
-            roll.eightNeighbors().count { paperRolls.contains(it) } < 4
-        }
+    val nextFunction: (Set<Point>) -> Set<Point> = { rolls ->
+        rolls.filter { roll -> roll.eightNeighbors().count { rolls.contains(it) } >= 4 }.toSet()
     }
 
-    override fun partTwo(): Int {
-        val nextFunction: (Set<Point>) -> Set<Point> = { rolls ->
-            rolls.filter { roll -> roll.eightNeighbors().count { rolls.contains(it) } >= 4 }.toSet()
-        }
-        val finalRound: Set<Point> = generateSequence(paperRolls, nextFunction)
-            .windowed(2)
-            .takeWhile { (a, b) -> a.size != b.size }
-            .map { it[1] }
-            .last()
-        return paperRolls.size - finalRound.size
-    }
+    override fun partOne(): Int = paperRolls.size - generateSequence(paperRolls, nextFunction)
+        .take(2)
+        .last()
+        .count()
+
+    override fun partTwo(): Int = paperRolls.size - generateSequence(paperRolls, nextFunction)
+        .windowed(2)
+        .takeWhile { (a, b) -> a.size != b.size }
+        .map { it[1] }
+        .last().size
 
     data class Point(val x: Int, val y: Int) {
 
